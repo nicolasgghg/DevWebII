@@ -27,6 +27,9 @@ export default class ProdutoController {
     const produto = await Produto.findUnique({
       where: {
         id: parseInt(req.params.id)
+      },
+      include: {
+        fotos: true
       }
     })
     if (!produto) {

@@ -13,10 +13,18 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-
-model Produto{
-  id  Int @id @default(autoincrement())
-  nome String
-  preco Float
+model Produto {
+  id        Int    @id @default(autoincrement())
+  nome      String
+  preco     Float
   descricao String
+  fotos     Foto[]
+}
+
+model Foto {
+  id        Int     @id @default(autoincrement())
+  titulo     String
+  url       String
+  produtoId Int
+  produto   Produto @relation(fields: [produtoId], references: [id])
 }
