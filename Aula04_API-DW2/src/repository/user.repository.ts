@@ -34,3 +34,21 @@ export const findUserById = async (id: number) => {
 
     return User.findFirst({ where: { id } })
 }
+
+export const findUserByIdWithTasks = async (id: number) => {
+    return User.findFirst({
+        where: { id },
+        include: { tasks: true }
+    })
+}
+
+export const findUserByIdWithTasksById = async (id: number, idTask: number) => {
+    return User.findFirst({
+        where: { id },
+        include: {
+            tasks: {
+                where: { id: idTask }
+            }
+        }
+    })
+}
