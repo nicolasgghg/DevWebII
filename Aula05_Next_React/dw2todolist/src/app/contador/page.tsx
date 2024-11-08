@@ -4,9 +4,9 @@ import NavBar from "@/components/nav-bar";
 import { useState } from "react";
 
 const buttons = [
-  { color: "bg-red-500", text: "Red" },
-  { color: "bg-green-500", text: "Green" },
-  { color: "bg-blue-500", text: "Blue" },
+  { color: "bg-red-500", text: "red" },
+  { color: "bg-green-500", text: "green" },
+  { color: "bg-blue-500", text: "blue" },
 ];
 
 export default function Contador() {
@@ -20,7 +20,7 @@ export default function Contador() {
 
   return (
     <div
-      className={`flex gap-4 items-center justify-center h-screen flex-col ${backgroundColor}`}
+      className={`flex gap-4 items-center justify-center h-screen flex-col ${ backgroundColor}`}
     >
       <NavBar titlePage="Contador" />
 
@@ -28,7 +28,8 @@ export default function Contador() {
         <ButtonFatec
           key={color}
           handleClick={() => handleClick(color)}
-          buttonText={text}
+          buttonText={text.toUpperCase()}
+          bgColor={text}
         />
       ))}
 

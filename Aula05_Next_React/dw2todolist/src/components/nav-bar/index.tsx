@@ -8,6 +8,7 @@ const linkPages = [
   { titleLink: "HOME", routeLink: "/" },
   { titleLink: "TODO", routeLink: "/todo" },
   { titleLink: "CONTADOR", routeLink: "/contador" },
+  { titleLink: "USER", routeLink: "/user" },
 ];
 
 export default function NavBar({ titlePage }: INavBar) {
